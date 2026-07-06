@@ -1,0 +1,27 @@
+services:
+  # The static site, served by the nginx image built from ./Dockerfile.
+  web:
+    build: .
+    image: portfolio-web
+    container_name: portfolio-web
+    restart: unless-stopped
+    ports:
+      - "8080:80"   # local testing only; the tunnel reaches nginx over the internal network
+    volumes:
+      - ./site:/var/www/html:ro
+      - ./nginx/default.conf:/etc/nginx/http.d/default.conf:ro
+
+  # The Cloudflare Tunnel. Stock image, never customized, just handed a config.
+  # Runs only with:  docker compose --profile tunnel up -d
+  # Plain 'docker compose up -d' starts nginx alone, so the site can be tested
+  # locally with no Cloudflare account.
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: portfolio-tunnel
+    restart: unless-stopped
+    profiles: ["tunnel"]
+    command: tunnel --config /etc/cloudflared/config.yml run
+    volumes:
+      - ./cloudflared:/etc/cloudflared:ro   # gitignored: holds config.yml + tunnel credentials
+    depends_on:
+      - web
