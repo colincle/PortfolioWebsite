@@ -48,7 +48,7 @@ a:hover { text-decoration: underline; }
 }
 
 .site-header nav {
-  max-width: 760px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0.8rem 1.25rem;
   display: flex;
@@ -73,7 +73,7 @@ a:hover { text-decoration: underline; }
 /* Layout */
 
 main {
-  max-width: 760px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 1.25rem 3rem;
 }
@@ -98,7 +98,7 @@ h2.more { margin-top: 2.5rem; }
   color: var(--accent);
   margin: 0.4rem 0 1rem;
 }
-.intro { font-size: 1.1rem; max-width: 36em; }
+.intro { font-size: 1.1rem; }
 .facts { margin-top: 1rem; color: var(--muted); font-size: 0.92rem; }
 
 /* Project cards on the homepage */
@@ -180,7 +180,7 @@ h2.more { margin-top: 2.5rem; }
 
 .prose { margin-top: 2rem; }
 .prose p { margin-bottom: 1rem; }
-.prose h2 { font-size: 1.1rem; margin-top: 2rem; }
+.prose h2 { font-size: 1.1rem; margin-top: 2.6rem; margin-bottom: 0.5rem; }
 .prose ul { margin: 0.5rem 0 1rem 1.2rem; }
 .prose li { margin-bottom: 0.4rem; }
 
@@ -188,28 +188,59 @@ h2.more { margin-top: 2.5rem; }
   font-size: 1.1rem;
   color: var(--muted);
   margin-top: 0.6rem;
-  max-width: 40em;
 }
 
 .shot {
   display: block;
-  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto 0.4rem;
   border: 1px solid var(--border);
   border-radius: 8px;
-  margin: 1.5rem 0 0.4rem;
 }
 .shot + .shot { margin-top: 0.75rem; }
-.caption { color: var(--muted); font-size: 0.8rem; margin-bottom: 1rem; }
-
-.tech dt {
-  font-family: var(--mono);
+.caption {
+  color: var(--muted);
   font-size: 0.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.skills { margin-top: 1.5rem; }
+.skill-group { margin-bottom: 1.1rem; }
+.skill-group .label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--accent);
-  margin-top: 1rem;
+  color: var(--muted);
+  margin-bottom: 0.45rem;
 }
-.tech dd { margin-top: 0.15rem; }
+.tag {
+  display: inline-block;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  margin: 0 0.35rem 0.4rem 0;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+.langs {
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.langs strong { color: var(--text); font-weight: 600; }
+
+#about h3 {
+  font-size: 1rem;
+  margin-top: 2.6rem;
+  margin-bottom: 1rem;
+}
+#about > p { margin-bottom: 1.2rem; }
+.skills { margin-bottom: 0.5rem; }
 
 .footer-back {
   border-top: 1px solid var(--border);
@@ -223,7 +254,7 @@ footer {
   padding: 1.5rem 1.25rem 2.5rem;
 }
 footer p {
-  max-width: 760px;
+  max-width: 1080px;
   margin: 0 auto;
   color: var(--muted);
   font-size: 0.85rem;
