@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>inception · Clement Colin</title>
+  <meta name="description" content="A multi-container infrastructure (NGINX, WordPress, MariaDB) built from hand-written Dockerfiles. Docker.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <a class="brand" href="/"><span class="prompt">&gt;_</span> clementcolin.com</a>
+    <div class="nav-links">
+      <a href="/#projects">Projects</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="project-head">
+    <h1>inception</h1>
+    <p class="stack">Docker · docker compose</p>
+    <p class="lede">A multi-container infrastructure (NGINX, WordPress, MariaDB)
+      built from hand-written Dockerfiles.</p>
+    <a class="btn" href="https://github.com/colincle/inception">View on GitHub</a>
+  </div>
+
+  <div class="prose">
+    <p>
+      A small multi-container infrastructure built from scratch with Docker and
+      docker compose. It runs a WordPress site behind NGINX with TLS, backed by a
+      MariaDB database, each in its own container built from a hand-written
+      Dockerfile with no prebuilt application images.
+    </p>
+
+    <h2>Architecture</h2>
+    <p>Three services on a private Docker network:</p>
+    <ul>
+      <li><strong>nginx</strong> is the only entrypoint, exposed on port 443 with
+        a self-signed TLS certificate generated at build time, proxying PHP
+        requests to WordPress.</li>
+      <li><strong>wordpress</strong> runs on PHP-FPM, reading its database
+        credentials and authentication salts from the environment.</li>
+      <li><strong>mariadb</strong> stores the WordPress data, initialised by an
+        entrypoint script on first start.</li>
+    </ul>
+    <p>WordPress files and the database live on named volumes so data survives a
+      restart. The containers are built from <code>debian:12</code> images.</p>
+  </div>
+
+  <a class="back-link" href="/#projects">&larr; All projects</a>
+</main>
+
+<footer class="footer-back">
+  <p>&copy; Clement Colin · <a href="mailto:clmnt.co@gmail.com">clmnt.co@gmail.com</a> · <a href="https://www.linkedin.com/in/clement-colin-96a87b306/">LinkedIn</a></p>
+</footer>
+
+</body>
+</html>

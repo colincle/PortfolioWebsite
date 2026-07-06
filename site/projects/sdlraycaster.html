@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDLRaycaster · Clement Colin</title>
+  <meta name="description" content="A first-person raycasting engine written from scratch on SDL2, with a multithreaded renderer and five hand-made levels. C.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <a class="brand" href="/"><span class="prompt">&gt;_</span> clementcolin.com</a>
+    <div class="nav-links">
+      <a href="/#projects">Projects</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="project-head">
+    <h1>SDLRaycaster</h1>
+    <p class="stack">C · SDL2 (image, mixer)</p>
+    <p class="lede">A first-person raycasting engine written from scratch on
+      SDL2, with a multithreaded renderer and five hand-made levels.</p>
+    <a class="btn" href="https://github.com/colincle/SDLRaycaster">View on GitHub</a>
+  </div>
+
+  <img class="shot" src="/img/sdlraycaster-1.png" alt="A textured corridor rendered by SDLRaycaster">
+  <img class="shot" src="/img/sdlraycaster-2.png" alt="A room with pillars and varied block heights">
+
+  <div class="prose">
+    <p>
+      A first-person raycasting engine written from scratch in C. No game engine
+      and no raycasting library, just SDL2 for the window, input, image loading,
+      and audio. Everything from the renderer to the movement and collision
+      system is hand-written.
+    </p>
+
+    <h2>Features</h2>
+    <ul>
+      <li>A textured raycaster with half-height and hanging blocks, holes you can
+        look down into, and pillars, all driven by the map characters.</li>
+      <li>Multithreaded rendering that splits the screen into vertical strips
+        across the CPU cores with SDL threads, and a z-buffer for correct depth
+        ordering.</li>
+      <li>Walking, running, jumping, crouching, and crawling, each with its own
+        eye height, plus gravity and circle-based collision.</li>
+      <li>Mouse look and vertical look with full gamepad support.</li>
+      <li>Five hand-made levels dispatched through a function-pointer table, with
+        triggers that carry the player state from one level into the next.</li>
+    </ul>
+  </div>
+
+  <a class="back-link" href="/#projects">&larr; All projects</a>
+</main>
+
+<footer class="footer-back">
+  <p>&copy; Clement Colin · <a href="mailto:clmnt.co@gmail.com">clmnt.co@gmail.com</a> · <a href="https://www.linkedin.com/in/clement-colin-96a87b306/">LinkedIn</a></p>
+</footer>
+
+</body>
+</html>

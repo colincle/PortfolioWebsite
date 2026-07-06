@@ -3,23 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>clementcolin.com</title>
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      display: grid;
-      place-items: center;
-      min-height: 100vh;
-      margin: 0;
-      background: #14161a;
-      color: #e8e8e6;
-    }
-    code { color: #3ecf8e; }
-  </style>
+  <title>Clement Colin · C and C++ Developer</title>
+  <meta name="description" content="42 Tokyo common core graduate, building real, finished tools: polished desktop apps, systems programming, and graphics from the ground up.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <meta property="og:title" content="Clement Colin · C and C++ Developer">
+  <meta property="og:description" content="Polished desktop apps, systems programming, and graphics from the ground up.">
+  <meta property="og:url" content="https://clementcolin.com">
+  <meta property="og:type" content="website">
 </head>
 <body>
-  <main>
-    <p>clementcolin.com is <code>under construction</code>.</p>
-  </main>
+
+<header class="site-header">
+  <nav>
+    <a class="brand" href="/"><span class="prompt">&gt;_</span> clementcolin.com</a>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h1>Clement Colin</h1>
+    <p class="tagline">C and C++ developer</p>
+    <p class="intro">
+      42 Tokyo common core graduate, building real, finished tools: polished
+      desktop apps, systems programming, and graphics from the ground up.
+    </p>
+    <p class="facts">
+      Tokyo, Japan · Spouse visa, no sponsorship needed ·
+      <a href="https://github.com/colincle">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/clement-colin-96a87b306/">LinkedIn</a>
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Featured projects</h2>
+
+    <a class="card" href="/projects/rewatch.html">
+      <h3>ReWatch <span class="arrow">&rarr;</span></h3>
+      <p class="stack">C++20 · Qt 6</p>
+      <p>A cross-platform desktop app to track movies and shows, with OMDb
+      search, a binary-search ranking system, and notifications for new seasons
+      and movie releases.</p>
+    </a>
+
+    <a class="card" href="/projects/kakeibo.html">
+      <h3>Kakeibo <span class="arrow">&rarr;</span></h3>
+      <p class="stack">C++20 · Qt 6</p>
+      <p>A desktop budgeting app built on the Japanese kakeibo method, with a
+      bilingual French and Japanese UI and real bank-statement import.</p>
+    </a>
+
+    <a class="card" href="/projects/remotedesktop.html">
+      <h3>remoteDesktop <span class="arrow">&rarr;</span></h3>
+      <p class="stack">C++ · Qt</p>
+      <p>A screen-streaming app with a custom dirty-tile diff protocol and a
+      self-provisioned Cloudflare tunnel.</p>
+    </a>
+
+    <a class="card" href="/projects/sdlraycaster.html">
+      <h3>SDLRaycaster <span class="arrow">&rarr;</span></h3>
+      <p class="stack">C · SDL2</p>
+      <p>A first-person raycasting engine written from scratch on SDL2, with a
+      multithreaded renderer and five hand-made levels.</p>
+    </a>
+
+    <h2 class="more">More projects</h2>
+    <ul class="project-list">
+      <li><a href="/projects/repojump.html"><span class="name">repojump</span><span class="blurb">Track and jump into GitHub repos · Bash</span></a></li>
+      <li><a href="/projects/push_swap.html"><span class="name">push_swap</span><span class="blurb">Cost-based stack sorting · C</span></a></li>
+      <li><a href="/projects/minitalk.html"><span class="name">minitalk</span><span class="blurb">Messaging over UNIX signals · C</span></a></li>
+      <li><a href="/projects/philosophers.html"><span class="name">philosophers</span><span class="blurb">Dining-philosophers concurrency · C</span></a></li>
+      <li><a href="/projects/inception.html"><span class="name">inception</span><span class="blurb">Multi-container infrastructure · Docker</span></a></li>
+      <li><a href="/projects/othello.html"><span class="name">Othello</span><span class="blurb">Complete playable game · C</span></a></li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      Skills built through the 42 curriculum: strong C and C++ fundamentals
+      (manual memory management, data structures, object-oriented design,
+      templates, and the STL), Linux system administration and security
+      hardening, and networking fundamentals such as subnetting, routing, and
+      TCP/IP.
+    </p>
+
+    <dl class="tech">
+      <dt>Primary</dt>
+      <dd>C, C++ (Qt)</dd>
+      <dt>Comfortable with</dt>
+      <dd>Bash, Docker, SDL2, POSIX threads, CMake, Make</dd>
+      <dt>Familiar with</dt>
+      <dd>Python, JavaScript</dd>
+      <dt>Languages</dt>
+      <dd>French (native), English (fluent), Japanese (strong foundation, not
+        yet conversational)</dd>
+    </dl>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      <a href="mailto:clmnt.co@gmail.com">clmnt.co@gmail.com</a> ·
+      <a href="https://github.com/colincle">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/clement-colin-96a87b306/">LinkedIn</a>
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    Self-hosted in Tokyo on a second-hand school Chromebook running Linux,
+    behind a Cloudflare Tunnel. No open ports, no JavaScript, no framework.
+    <a href="https://github.com/colincle/PortfolioWebsite">How this site works &rarr;</a>
+  </p>
+</footer>
+
 </body>
 </html>

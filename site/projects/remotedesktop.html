@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>remoteDesktop · Clement Colin</title>
+  <meta name="description" content="A screen-streaming app with a custom dirty-tile diff protocol and a self-provisioned Cloudflare tunnel. C++, Qt.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <a class="brand" href="/"><span class="prompt">&gt;_</span> clementcolin.com</a>
+    <div class="nav-links">
+      <a href="/#projects">Projects</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="project-head">
+    <h1>remoteDesktop</h1>
+    <p class="stack">C++ · Qt · Cloudflare Tunnel</p>
+    <p class="lede">A screen-streaming app with a custom dirty-tile diff protocol
+      and a self-provisioned Cloudflare tunnel.</p>
+    <a class="btn" href="https://github.com/colincle/remoteDesktop">View on GitHub</a>
+  </div>
+
+  <img class="shot" src="/img/remotedesktop.png" alt="The client viewing a remote screen">
+
+  <div class="prose">
+    <p>
+      An experimental app that streams a machine's screen to a remote viewer
+      over a self-provisioned Cloudflare tunnel. It is view-only: it shows the
+      screen and cursor, but remote input is not implemented. Built to explore
+      screen capture, MJPEG streaming, and tunnel automation in C++. It runs on
+      macOS and Linux, and the two interoperate in both directions.
+    </p>
+
+    <h2>How it works</h2>
+    <ul>
+      <li>A custom differential protocol sends an initial full JPEG frame, then
+        only the changed regions ("dirty tiles") as small JPEGs tagged with
+        their coordinates, so unchanged areas are never re-sent.</li>
+      <li>The server creates and manages a Cloudflare tunnel that exposes the
+        stream at a public hostname, and parses the credentials it generates.
+        You never run a cloudflared command yourself.</li>
+      <li>A hand-written tokenizer and directive parser reads an nginx-style
+        config and reports errors with file, line, and column.</li>
+      <li>A dedicated Qt client reconstructs the screen from the custom wire
+        format, which a browser cannot render.</li>
+    </ul>
+
+    <h2>Scope</h2>
+    <p>
+      View-only and unauthenticated by design. Transport is encrypted end to end
+      through Cloudflare, so the residual risk is unauthorized viewing rather
+      than interception, and the barrier is the obscurity of the hostname. A
+      production version would gate the stream behind an auth layer. These were
+      deliberate scope decisions for a personal project.
+    </p>
+  </div>
+
+  <a class="back-link" href="/#projects">&larr; All projects</a>
+</main>
+
+<footer class="footer-back">
+  <p>&copy; Clement Colin · <a href="mailto:clmnt.co@gmail.com">clmnt.co@gmail.com</a> · <a href="https://www.linkedin.com/in/clement-colin-96a87b306/">LinkedIn</a></p>
+</footer>
+
+</body>
+</html>

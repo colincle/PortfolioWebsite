@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>minitalk · Clement Colin</title>
+  <meta name="description" content="A client and server that transmit a message between two processes using only UNIX signals, one bit per signal. C.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <a class="brand" href="/"><span class="prompt">&gt;_</span> clementcolin.com</a>
+    <div class="nav-links">
+      <a href="/#projects">Projects</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="project-head">
+    <h1>minitalk</h1>
+    <p class="stack">C</p>
+    <p class="lede">A client and server that transmit a message between two
+      processes using only UNIX signals, one bit per signal.</p>
+    <a class="btn" href="https://github.com/colincle/minitalk">View on GitHub</a>
+  </div>
+
+  <img class="shot" src="/img/minitalk.gif" alt="minitalk sending a message between two terminals over signals">
+
+  <div class="prose">
+    <p>
+      A small client and server pair that sends a text message between two
+      processes using nothing but UNIX signals. The client turns each character
+      into its 8 bits and fires one signal per bit, <code>SIGUSR1</code> for a 0
+      and <code>SIGUSR2</code> for a 1. The server catches those signals,
+      rebuilds each byte bit by bit, and prints the message as it arrives.
+    </p>
+  </div>
+
+  <a class="back-link" href="/#projects">&larr; All projects</a>
+</main>
+
+<footer class="footer-back">
+  <p>&copy; Clement Colin · <a href="mailto:clmnt.co@gmail.com">clmnt.co@gmail.com</a> · <a href="https://www.linkedin.com/in/clement-colin-96a87b306/">LinkedIn</a></p>
+</footer>
+
+</body>
+</html>

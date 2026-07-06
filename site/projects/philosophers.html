@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>philosophers · Clement Colin</title>
+  <meta name="description" content="The dining-philosophers concurrency problem, using threads, per-fork mutexes, and a monitor thread. C.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <a class="brand" href="/"><span class="prompt">&gt;_</span> clementcolin.com</a>
+    <div class="nav-links">
+      <a href="/#projects">Projects</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="project-head">
+    <h1>philosophers</h1>
+    <p class="stack">C · pthreads</p>
+    <p class="lede">The dining-philosophers concurrency problem, using threads,
+      per-fork mutexes, and a monitor thread.</p>
+    <a class="btn" href="https://github.com/colincle/philosophers">View on GitHub</a>
+  </div>
+
+  <img class="shot" src="/img/philosophers.gif" alt="The dining-philosophers simulation running in the terminal">
+
+  <div class="prose">
+    <p>
+      A solution to the classic dining-philosophers problem, written in C with
+      POSIX threads. Philosophers sit around a table alternating between eating,
+      sleeping, and thinking. Each needs the two forks next to it to eat, and the
+      simulation has to run without deadlocks and without any philosopher
+      starving.
+    </p>
+
+    <h2>How it works</h2>
+    <ul>
+      <li>Each philosopher runs in its own thread, and each fork is a mutex, so
+        two neighbours can never hold the same fork at once.</li>
+      <li>Forks are always taken in a consistent order, which avoids the circular
+        wait that would otherwise deadlock the table.</li>
+      <li>A separate monitor thread watches every philosopher and stops the
+        simulation the moment one goes too long without eating.</li>
+      <li>Shared state is guarded by mutexes so the monitor and philosopher
+        threads never race on it.</li>
+    </ul>
+  </div>
+
+  <a class="back-link" href="/#projects">&larr; All projects</a>
+</main>
+
+<footer class="footer-back">
+  <p>&copy; Clement Colin · <a href="mailto:clmnt.co@gmail.com">clmnt.co@gmail.com</a> · <a href="https://www.linkedin.com/in/clement-colin-96a87b306/">LinkedIn</a></p>
+</footer>
+
+</body>
+</html>

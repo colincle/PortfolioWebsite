@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReWatch · Clement Colin</title>
+  <meta name="description" content="A cross-platform desktop app to track movies and shows, with OMDb search, a binary-search ranking system, and release notifications. C++20, Qt 6.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <a class="brand" href="/"><span class="prompt">&gt;_</span> clementcolin.com</a>
+    <div class="nav-links">
+      <a href="/#projects">Projects</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="project-head">
+    <h1>ReWatch</h1>
+    <p class="stack">C++20 · Qt 6</p>
+    <p class="lede">A cross-platform desktop app to track movies and shows, with
+      OMDb search, a binary-search ranking system, and notifications for new
+      seasons and movie releases.</p>
+    <a class="btn" href="https://github.com/colincle/ReWatch">View on GitHub</a>
+  </div>
+
+  <img class="shot" src="/img/rewatch.png" alt="The ReWatch library, a grid of movie and TV posters">
+
+  <div class="prose">
+    <p>A desktop app to track your movies and TV shows, built with C++ and Qt 6.</p>
+
+    <h2>Features</h2>
+    <ul>
+      <li>A poster-grid library, sortable by title, release date, last viewed,
+        or rank, with a zoom level that is remembered across sessions.</li>
+      <li>Search and add from the OMDb database by title, or paste an IMDb ID or
+        URL, with long result lists loaded in pages.</li>
+      <li>Watched tracking and a filter for what is left to watch, plus
+        missing-poster recovery from a local image.</li>
+      <li>Automatic library updates that check OMDb for new seasons, episodes,
+        and movie releases within a daily request budget, surfaced as
+        notifications.</li>
+      <li>Light and dark themes, each with its own accent color, and full zip
+        export and import of the library.</li>
+      <li>A head-to-head binary-search tournament ranking that places a title in
+        at most about 10 comparisons across a 1000-title library.</li>
+    </ul>
+
+    <p>The app code compiles into a shared library that both the app and its Qt
+      Test suite (31 suites, 300+ cases) link against. It runs on macOS and
+      Linux, shipping as a macOS <code>.app</code> and a Linux AppImage.</p>
+  </div>
+
+  <a class="back-link" href="/#projects">&larr; All projects</a>
+</main>
+
+<footer class="footer-back">
+  <p>&copy; Clement Colin · <a href="mailto:clmnt.co@gmail.com">clmnt.co@gmail.com</a> · <a href="https://www.linkedin.com/in/clement-colin-96a87b306/">LinkedIn</a></p>
+</footer>
+
+</body>
+</html>
