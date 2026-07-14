@@ -1,6 +1,7 @@
 # clementcolin.com
 
-My portfolio website, self-hosted at home in Tokyo on a second-hand school
+My portfolio website, live at [clementcolin.com](https://clementcolin.com),
+self-hosted at home in Tokyo on a second-hand school
 Chromebook (Acer Spin 511 R752T, Celeron, 4GB RAM) running Linux Mint, bought
 at Hard Off for ¥5,000.
 
@@ -55,7 +56,8 @@ Consequences of this design:
 - The only secret is the tunnel token, kept in a gitignored `.env` file.
   `.env.example` documents the expected shape.
 - Deploying a site update is `git pull` on the server. The `site/` directory
-  is mounted into nginx, so there is nothing to rebuild or restart.
+  is mounted into nginx, so content changes need nothing rebuilt or restarted.
+  Only a change to the nginx config needs a `docker compose restart web`.
 - The Chromebook's battery doubles as a small UPS.
 
 ## Stack
@@ -71,12 +73,9 @@ Consequences of this design:
 | DNS + TLS | Cloudflare edge |
 | Site | Static HTML/CSS, plus one WebAssembly demo (Emscripten) |
 
-## Roadmap
+## License
 
-- [x] README, architecture
-- [ ] docker compose stack (nginx + cloudflared)
-- [ ] nginx configuration
-- [ ] the site itself
-- [ ] test on a Linux Mint VM
-- [ ] Cloudflare account, DNS migration, tunnel creation
-- [ ] deploy on the Chromebook
+The skeleton is up for grabs, the content is off limits. Everything that
+runs the site (Dockerfile, docker compose, nginx configuration, Makefile,
+scripts) is MIT, see [LICENSE](LICENSE). The content of `site/` (texts,
+images, resume) is mine, all rights reserved.
