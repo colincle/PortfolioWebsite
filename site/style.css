@@ -112,6 +112,7 @@ h2.more { margin-top: 2.5rem; }
 .card-grid .card { margin-bottom: 0; }
 
 .card {
+  position: relative;
   display: block;
   background: var(--bg-alt);
   border: 1px solid var(--border);
@@ -130,6 +131,22 @@ h2.more { margin-top: 2.5rem; }
   border: 1px solid var(--border);
   margin-bottom: 0.9rem;
 }
+/* Pill pinned to the top-right corner of a card's thumbnail, for cards whose
+   project can be played live on the site. */
+.play-badge {
+  position: absolute;
+  top: 1.9rem;
+  right: 2.05rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+}
+
 .card:hover {
   text-decoration: none;
   border-color: var(--accent);
@@ -205,6 +222,16 @@ h2.more { margin-top: 2.5rem; }
   font-size: 1.1rem;
   color: var(--muted);
   margin-top: 0.6rem;
+}
+
+.demo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 1.5rem auto 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #101014;
 }
 
 .shot {

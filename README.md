@@ -9,10 +9,12 @@ was replaced with [MrChromebox](https://mrchromebox.tech/) full UEFI firmware
 (coreboot + edk2), which turns a locked-down school machine into an ordinary
 x86 computer that boots standard Linux.
 
-The site itself is static HTML and CSS. No JavaScript, no framework, no build
-step. It is served by nginx running in Docker and exposed to the internet
-through a Cloudflare Tunnel, so the home router keeps zero open ports and the
-home IP never appears in DNS.
+The site itself is static HTML and CSS. No framework and no build step. The
+one piece of JavaScript is the playable SDL Raycaster demo under
+`site/demos/`, the C engine compiled to WebAssembly with Emscripten and
+served as static files like everything else. The site is served by nginx
+running in Docker and exposed to the internet through a Cloudflare Tunnel, so
+the home router keeps zero open ports and the home IP never appears in DNS.
 
 ## Architecture
 
@@ -67,7 +69,7 @@ Consequences of this design:
 | Web server | nginx (alpine image) |
 | Ingress | cloudflared (Cloudflare Tunnel, free plan) |
 | DNS + TLS | Cloudflare edge |
-| Site | Static HTML/CSS |
+| Site | Static HTML/CSS, plus one WebAssembly demo (Emscripten) |
 
 ## Roadmap
 
