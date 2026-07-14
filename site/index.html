@@ -6,7 +6,7 @@
   <title>Clement Colin · C and C++ Developer</title>
   <meta name="description" content="42 Tokyo common core graduate, building real, finished tools: polished desktop apps, systems programming, and graphics from the ground up.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/style.css?v=3">
+  <link rel="stylesheet" href="/style.css?v=8">
   <meta property="og:title" content="Clement Colin · C and C++ Developer">
   <meta property="og:description" content="Polished desktop apps, systems programming, and graphics from the ground up.">
   <meta property="og:url" content="https://clementcolin.com">
@@ -14,16 +14,7 @@
 </head>
 <body>
 
-<header class="site-header">
-  <nav>
-    <a class="brand" href="/"><span class="prompt">&gt;_</span> clementcolin.com</a>
-    <div class="nav-links">
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-</header>
+<!--#include virtual="/partials/header.html" -->
 
 <main>
 
@@ -31,20 +22,23 @@
     <h1>Clement Colin</h1>
     <p class="tagline">C and C++ developer</p>
     <p class="intro">
-      42 Tokyo common core graduate, building real, finished tools: polished
+      <a href="https://42tokyo.jp/" target="_blank" rel="noopener">42 Tokyo</a> common core graduate, building real, finished tools: polished
       desktop apps, systems programming, and graphics from the ground up.
     </p>
     <p class="facts">
       Tokyo, Japan · Spouse visa, no sponsorship needed ·
       <a href="https://github.com/colincle" target="_blank" rel="noopener">GitHub</a> ·
-      <a href="https://www.linkedin.com/in/clement-colin-96a87b306/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/clement-colin-96a87b306/" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="/resume.html">Resume</a>
     </p>
   </section>
 
   <section id="projects">
     <h2>Featured projects</h2>
 
+    <div class="card-grid">
     <a class="card" href="/projects/rewatch.html">
+      <img class="thumb" src="/img/thumbs/rewatch.png" alt="ReWatch screenshot">
       <h3>ReWatch <span class="arrow">&rarr;</span></h3>
       <p class="stack">C++20 · Qt 6</p>
       <p>A cross-platform desktop app to track movies and shows, with OMDb
@@ -53,75 +47,50 @@
     </a>
 
     <a class="card" href="/projects/sdlraycaster.html">
-      <h3>SDLRaycaster <span class="arrow">&rarr;</span></h3>
+      <img class="thumb" src="/img/thumbs/sdlraycaster.png" alt="SDL Raycaster screenshot">
+      <h3>SDL Raycaster <span class="arrow">&rarr;</span></h3>
       <p class="stack">C · SDL2</p>
       <p>A first-person raycasting engine written from scratch on SDL2, with a
       multithreaded renderer and five hand-made levels.</p>
     </a>
 
     <a class="card" href="/projects/remotedesktop.html">
-      <h3>remoteDesktop <span class="arrow">&rarr;</span></h3>
+      <img class="thumb" src="/img/thumbs/remotedesktop.png" alt="Remote Desktop screenshot">
+      <h3>Remote Desktop <span class="arrow">&rarr;</span></h3>
       <p class="stack">C++ · Qt</p>
       <p>A screen-streaming app with a custom dirty-tile diff protocol and a
       self-provisioned Cloudflare tunnel.</p>
     </a>
 
     <a class="card" href="/projects/kakeibo.html">
+      <img class="thumb" src="/img/thumbs/kakeibo.png" alt="Kakeibo screenshot">
       <h3>Kakeibo <span class="arrow">&rarr;</span></h3>
       <p class="stack">C++20 · Qt 6</p>
       <p>A desktop budgeting app built on the Japanese kakeibo method, with a
       bilingual French and Japanese UI and real bank-statement import.</p>
     </a>
+    </div>
 
     <h2 class="more">More projects</h2>
     <ul class="project-list">
-      <li><a href="/projects/repojump.html"><span class="name">repojump</span><span class="blurb">Track and jump into GitHub repos · Bash</span></a></li>
-      <li><a href="/projects/push_swap.html"><span class="name">push_swap</span><span class="blurb">Cost-based stack sorting · C</span></a></li>
-      <li><a href="/projects/minitalk.html"><span class="name">minitalk</span><span class="blurb">Messaging over UNIX signals · C</span></a></li>
-      <li><a href="/projects/philosophers.html"><span class="name">philosophers</span><span class="blurb">Dining-philosophers concurrency · C</span></a></li>
-      <li><a href="/projects/inception.html"><span class="name">inception</span><span class="blurb">Multi-container infrastructure · Docker</span></a></li>
+      <li><a href="/projects/repojump.html"><span class="name">RepoJump</span><span class="blurb">Track and jump into GitHub repos · Bash</span></a></li>
+      <li><a href="/projects/push_swap.html"><span class="name">Push Swap</span><span class="blurb">Cost-based stack sorting · C</span></a></li>
+      <li><a href="/projects/minitalk.html"><span class="name">Minitalk</span><span class="blurb">Messaging over UNIX signals · C</span></a></li>
+      <li><a href="/projects/philosophers.html"><span class="name">Philosophers</span><span class="blurb">Dining-philosophers concurrency · C</span></a></li>
+      <li><a href="/projects/inception.html"><span class="name">Inception</span><span class="blurb">Multi-container infrastructure · Docker</span></a></li>
       <li><a href="/projects/othello.html"><span class="name">Othello</span><span class="blurb">Complete playable game · C</span></a></li>
+      <li><a href="/projects/how-it-runs.html"><span class="name">Portfolio Website</span><span class="blurb">Self-hosted behind a Cloudflare Tunnel · nginx</span></a></li>
     </ul>
   </section>
 
   <section id="about">
     <h2>About</h2>
     <p>
-      Skills built through the 42 curriculum: strong C and C++ fundamentals
-      (manual memory management, data structures, object-oriented design,
-      templates, and the STL), Linux system administration and security
-      hardening, and networking fundamentals such as subnetting, routing, and
-      TCP/IP.
+      A career changer who came to software through professional kitchens and
+      self-taught SEO, then went all in at <a href="https://42tokyo.jp/" target="_blank" rel="noopener">42 Tokyo</a>. I build in C and C++, close to
+      the machine, and I am in Tokyo for the long run.
     </p>
-
-    <h3>Tech</h3>
-    <div class="skills">
-      <div class="skill-group">
-        <span class="label">Primary</span>
-        <span class="tag">C</span>
-        <span class="tag">C++ (Qt)</span>
-      </div>
-      <div class="skill-group">
-        <span class="label">Comfortable with</span>
-        <span class="tag">Bash</span>
-        <span class="tag">Docker</span>
-        <span class="tag">SDL2</span>
-        <span class="tag">POSIX threads</span>
-        <span class="tag">CMake</span>
-        <span class="tag">Make</span>
-      </div>
-      <div class="skill-group">
-        <span class="label">Familiar with</span>
-        <span class="tag">Python</span>
-        <span class="tag">JavaScript</span>
-      </div>
-    </div>
-
-    <h3>Languages</h3>
-    <p class="langs">
-      French (native), English (fluent), Japanese (strong foundation, not yet
-      conversational)
-    </p>
+    <p><a href="/about.html">More about me &rarr;</a></p>
   </section>
 
   <section id="contact">
@@ -135,13 +104,7 @@
 
 </main>
 
-<footer>
-  <p>
-    Self-hosted in Tokyo on a second-hand school Chromebook running Linux,
-    behind a Cloudflare Tunnel. No open ports, no JavaScript, no framework.
-    <a href="https://github.com/colincle/PortfolioWebsite" target="_blank" rel="noopener">How this site works &rarr;</a>
-  </p>
-</footer>
+<!--#include virtual="/partials/footer.html" -->
 
 </body>
 </html>

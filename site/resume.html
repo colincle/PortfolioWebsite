@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>resume · Clement Colin</title>
+  <meta name="description" content="Curriculum vitae of Clement Colin, a C and C++ software engineer based in Tokyo.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css?v=8">
+  <style>
+    .resume-actions {
+      max-width: 860px;
+      margin: 1.5rem auto 0;
+      padding: 0 1rem;
+      text-align: right;
+    }
+    .resume-sheet {
+      max-width: 860px;
+      margin: 1rem auto 3rem;
+      background: #ffffff;
+      color: #24272c;
+      padding: 2.6rem 3rem;
+      border: 1px solid #e2e2df;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+    }
+    .resume-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      border-bottom: 2px solid #0a7d4f;
+      padding-bottom: 0.7rem;
+      margin-bottom: 1.1rem;
+    }
+    .resume-head-text { flex: 1; }
+    .resume-photo {
+      width: 118px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #e2e2df;
+      flex-shrink: 0;
+    }
+    .resume-head h1 {
+      font-size: 2.1rem;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: #14161a;
+      margin: 0;
+    }
+    .resume-head .resume-title {
+      color: #0a7d4f;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin: 0.12rem 0 0;
+    }
+    .resume-contact {
+      font-size: 0.85rem;
+      color: #5b6168;
+      line-height: 1.6;
+    }
+    .resume-contact a { color: #5b6168; }
+    .resume-visa {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #14161a;
+      margin-top: 0.35rem;
+    }
+    .resume-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 1.8rem;
+    }
+    .resume-full { margin-top: 1.1rem; }
+    .resume-sheet section { margin-bottom: 1rem; }
+    .resume-top section:first-child { padding-top: 0; }
+    .resume-sheet section:last-child { margin-bottom: 0; }
+    .resume-sheet h2 {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #0a7d4f;
+      border: none;
+      border-bottom: 1px solid #e2e2df;
+      padding-bottom: 0.28rem;
+      margin-bottom: 0.5rem;
+    }
+    .resume-sheet h3 {
+      font-size: 0.92rem;
+      color: #14161a;
+      margin: 0;
+    }
+    .resume-sheet h3 a { color: #0a7d4f; text-decoration: none; }
+    .resume-sheet h3 a:hover { text-decoration: underline; }
+    .resume-sheet p { font-size: 0.88rem; line-height: 1.45; margin: 0.12rem 0 0; }
+    .resume-profile p + p { margin-top: 0.6rem; }
+    .resume-tech { font-size: 0.8rem; color: #24272c; margin-top: 0.35rem; }
+    .resume-tech strong { color: #14161a; }
+    .resume-when { font-weight: 400; color: #6a7078; font-size: 0.8rem; }
+    .resume-block { margin-bottom: 0.7rem; }
+    .resume-block:last-child { margin-bottom: 0; }
+    .resume-meta { font-size: 0.8rem; color: #6a7078; font-style: italic; margin-top: 0.55rem; }
+    .resume-sheet ul { margin: 0.35rem 0 0; padding-left: 1.1rem; }
+    .resume-sheet li { font-size: 0.875rem; line-height: 1.4; margin-bottom: 0.18rem; }
+    .resume-skills p { margin-bottom: 0.5rem; }
+    .resume-skills strong { color: #14161a; }
+    .resume-langs p { margin-bottom: 0.35rem; }
+
+    @media (max-width: 660px) {
+      .resume-top { grid-template-columns: 1fr; gap: 1.4rem; }
+      .resume-sheet { padding: 2rem 1.4rem; }
+    }
+
+    @media print {
+      .site-header, footer, .resume-actions { display: none !important; }
+      body { background: #ffffff; }
+      /* Print columns are narrower than on screen (no sheet padding, only a
+         1.2cm page margin), so nudge the title down a hair to keep it one line. */
+      .resume-head .resume-title { font-size: 0.83rem; }
+      .resume-sheet {
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        max-width: none;
+        padding: 0;
+      }
+      @page { margin: 1.2cm; }
+    }
+  </style>
+</head>
+<body>
+
+<!--#include virtual="/partials/header.html" -->
+
+<main>
+  <div class="resume-actions">
+    <a class="btn" href="/resume.pdf" download>Download PDF</a>
+  </div>
+
+  <article class="resume-sheet">
+    <header class="resume-head">
+      <div class="resume-head-text">
+      <h1>Clement Colin</h1>
+      <p class="resume-title">C++ Software Engineer · Desktop Applications · Networking · Systems Programming</p>
+      <p class="resume-contact">
+        Kawasaki, Japan ·
+        <a href="mailto:contact@clementcolin.com">contact@clementcolin.com</a><br>
+        <a href="https://github.com/colincle" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/clement-colin-96a87b306/" target="_blank" rel="noopener">LinkedIn</a> ·
+        <a href="https://clementcolin.com" target="_blank" rel="noopener">clementcolin.com</a>
+      </p>
+      <p class="resume-visa">Spouse visa, no sponsorship required.</p>
+      </div>
+      <img class="resume-photo" src="/img/thumbs/resumePicture.jpg" alt="Clement Colin">
+    </header>
+
+    <div class="resume-top">
+      <div class="resume-intro">
+        <section class="resume-profile">
+          <h2>Profile</h2>
+          <p>42 Tokyo graduate specialising in C, C++ and systems programming. I build performant desktop applications, networking software, and graphics engines, with a focus on clean architecture and maintainable, well-documented code.</p>
+          <p>I am a strong self-directed learner who picks up new technologies quickly, and I take a project from first idea to a finished result. At 42, every project is assessed by face-to-face peer review, which gave me steady practice explaining my own code and reading code written by others, alongside several team projects.</p>
+          <p>Before software I worked as a cook and in delivery (2011-2020), then in SEO, before committing fully to engineering.</p>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <div class="resume-block">
+            <h3>42 Tokyo <span class="resume-when">2024-2026</span></h3>
+            <p>Completed the common core of a demanding, project-based program built on peer learning with no lectures: C and C++, algorithms, Unix systems, networking, and Docker.</p>
+          </div>
+          <div class="resume-block">
+            <h3>CAP Cuisine <span class="resume-when">2011-2013</span></h3>
+            <p>Vocational cooking diploma.</p>
+          </div>
+        </section>
+      </div>
+
+      <aside class="resume-side">
+        <section class="resume-skills">
+          <h2>Skills</h2>
+          <p><strong>Languages:</strong> C, C++20 (primary), Bash, plus Python and JavaScript (working knowledge)</p>
+          <p><strong>Frameworks and libraries:</strong> Qt 6, SDL2, POSIX threads, nlohmann/json</p>
+          <p><strong>Tools:</strong> Git, Docker, CMake, Make, Linux, Valgrind</p>
+          <p><strong>Focus:</strong> systems programming, multithreading, IPC, protocol design, desktop applications, graphics and rendering, algorithms, networking (TCP/IP), OOP</p>
+        </section>
+
+        <section class="resume-langs">
+          <h2>Languages</h2>
+          <p>French (native)</p>
+          <p>English (fluent, professional working proficiency)</p>
+          <p>Japanese (elementary, daily-life level, actively studying)</p>
+        </section>
+      </aside>
+    </div>
+
+    <div class="resume-full">
+      <section>
+        <h2>Selected projects</h2>
+        <div class="resume-block">
+          <h3><a href="https://github.com/colincle/remoteDesktop" target="_blank" rel="noopener">Remote Desktop</a></h3>
+          <p>Screen-streaming client and server that transmits only the changed screen tiles through a custom binary protocol, cutting bandwidth against sending full frames. Manages its own Cloudflare tunnel end to end (login, configuration, credential parsing) and interoperates between macOS and Linux in both directions.</p>
+          <p class="resume-tech"><strong>Tools:</strong> C++ • Qt • Cloudflare Tunnel • CMake • client/server • custom protocol</p>
+        </div>
+        <div class="resume-block">
+          <h3><a href="https://github.com/colincle/ReWatch" target="_blank" rel="noopener">ReWatch</a></h3>
+          <p>Cross-platform desktop tracker for films and shows. Ranks a library with a binary-search tournament (about 10 comparisons to place a title among 1,000), integrates the OMDb API with request budgeting against a free-tier quota, and packages as a native macOS app and a Linux AppImage.</p>
+          <p class="resume-tech"><strong>Tools:</strong> C++20 • Qt 6 • CMake • OMDb API • JSON</p>
+        </div>
+        <div class="resume-block">
+          <h3><a href="https://github.com/colincle/SDLRaycaster" target="_blank" rel="noopener">SDL Raycaster</a></h3>
+          <p>First-person raycasting engine in C on SDL2, with no game engine and no raycasting library. A multithreaded renderer splits each frame across CPU cores with a z-buffer for correct occlusion, alongside a full movement model and five hand-built levels.</p>
+          <p class="resume-tech"><strong>Tools:</strong> C • SDL2 • POSIX threads • multithreading • Makefile</p>
+        </div>
+        <div class="resume-block">
+          <h3><a href="https://github.com/colincle/Kakeibo" target="_blank" rel="noopener">Kakeibo</a></h3>
+          <p>Budgeting app loosely inspired by the Japanese kakeibo method. Parses real bank statements in three formats, including full-width Japanese digit normalisation, with a bilingual French and Japanese UI and envelope budgeting with undo and redo.</p>
+          <p class="resume-tech"><strong>Tools:</strong> C++20 • Qt 6 • CMake • nlohmann/json • i18n</p>
+        </div>
+        <div class="resume-block">
+          <h3><a href="https://github.com/colincle/push_swap" target="_blank" rel="noopener">push_swap</a></h3>
+          <p>Cost-based stack sorting under a fixed operation set, in the top grading bracket (about 560 operations for 100 numbers and 5,000 for 500), verified over 200 randomised trials.</p>
+          <p class="resume-tech"><strong>Tools:</strong> C • Makefile • algorithms</p>
+        </div>
+        <p class="resume-meta">More projects and write-ups at clementcolin.com. Full source at github.com/colincle.</p>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        <div class="resume-block">
+          <h3>SEO Web Writer, then SEO Specialist <span class="resume-when">Nerubi · 2020-2023</span></h3>
+          <ul>
+            <li>Owned end-to-end SEO for up to 9 client sites at a time, self-taught from scratch.</li>
+            <li>Built keyword databases and content strategy, and briefed writers on structure, target keywords, and guidelines.</li>
+            <li>Audited sites for technical issues (metadata, header hierarchy), fixing them or handing them to the web team.</li>
+            <li>Monitored Search Console and grew organic traffic steadily, ranking clients on the searches their customers make.</li>
+          </ul>
+          <p class="resume-tech"><strong>Tools:</strong> Semrush • Screaming Frog • Google Search Console</p>
+        </div>
+      </section>
+    </div>
+  </article>
+</main>
+
+<!--#include virtual="/partials/footer.html" -->
+
+</body>
+</html>

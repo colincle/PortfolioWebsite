@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Website · Clement Colin</title>
+  <meta name="description" content="How clementcolin.com is self-hosted in Tokyo on a salvaged school Chromebook, behind a Cloudflare Tunnel with zero open ports.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css?v=8">
+</head>
+<body>
+
+<!--#include virtual="/partials/header.html" -->
+
+<main>
+  <div class="project-head">
+    <h1>Portfolio Website</h1>
+    <p class="stack">nginx · Docker · Cloudflare Tunnel</p>
+    <p class="lede">The site you are reading is hosted at home in Tokyo on a
+      salvaged school Chromebook, exposed to the internet through a Cloudflare
+      Tunnel with zero open ports.</p>
+    <a class="btn" href="https://github.com/colincle/PortfolioWebsite" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+
+  <pre class="diagram" aria-label="Architecture diagram: Cloudflare edge forwards requests through an outbound tunnel to a cloudflared container, which passes them over a private Docker network to an nginx container serving static files.">
+            Internet
+               │
+               ▼
+     ┌───────────────────┐
+     │  Cloudflare edge  │  DNS + TLS for clementcolin.com
+     └─────────┬─────────┘
+               │  tunnel (outbound-only connection,
+               │  established from inside the LAN)
+   ────────────┼────────────────────────  home router: zero open ports
+               ▼
+     ┌───────────────────┐     docker network      ┌───────────────┐
+     │    cloudflared    │ ──────────────────────► │  nginx:alpine │
+     │     container     │      http://web:80      │   container   │
+     └───────────────────┘                         └───────┬───────┘
+                                                           │ read-only mount
+                                                     ./site (static files)
+
+           Acer Chromebook R752T · Linux Mint · docker compose
+</pre>
+
+  <div class="prose">
+    <p>
+      The machine is an Acer Chromebook Spin 511 (R752T), a fanless Celeron with
+      4GB of RAM, bought second-hand for ¥5,000 at a Hard Off in Tokyo. It is a
+      locked-down school device, the kind that normally boots nothing but ChromeOS.
+    </p>
+
+    <h2>Reflashing the firmware</h2>
+    <p>
+      The stock firmware was replaced with
+      <a href="https://mrchromebox.tech/" target="_blank" rel="noopener">MrChromebox</a>
+      full UEFI firmware (coreboot + edk2), which turns the locked school machine
+      into an ordinary x86 computer that boots standard Linux. It now runs Linux
+      Mint, with Docker on top.
+    </p>
+
+    <h2>Reaching the internet without open ports</h2>
+    <p>
+      A visitor resolves clementcolin.com to Cloudflare's edge, which terminates
+      TLS. Cloudflare forwards the request through a tunnel that the cloudflared
+      container opened from inside the home LAN, so no inbound connection ever
+      reaches the router. cloudflared hands the request to the nginx container over
+      a private Docker network, and nginx serves the static files from a read-only
+      mount of the site directory.
+    </p>
+
+    <h2>Why this design</h2>
+    <ul>
+      <li>No port forwarding, no dynamic DNS, and the home IP never appears in DNS.</li>
+      <li>TLS certificates live at the Cloudflare edge, so there is nothing to renew
+        on the box.</li>
+      <li>Deploying an update is a git pull on the server. The site directory is
+        mounted into nginx, so there is nothing to rebuild or restart.</li>
+      <li>The only secret is the tunnel token, kept in a gitignored .env file.</li>
+      <li>The Chromebook's battery doubles as a small UPS.</li>
+    </ul>
+
+    <h2>The stack</h2>
+    <ul>
+      <li>Hardware: Acer Chromebook Spin 511 (R752T), fanless</li>
+      <li>Firmware: MrChromebox UEFI (coreboot + edk2)</li>
+      <li>OS: Linux Mint</li>
+      <li>Runtime: Docker and docker compose</li>
+      <li>Web server: nginx (alpine image)</li>
+      <li>Ingress: cloudflared (Cloudflare Tunnel, free plan)</li>
+      <li>DNS and TLS: Cloudflare edge</li>
+      <li>Site: static HTML and CSS, no JavaScript, no build step</li>
+    </ul>
+  </div>
+
+  <a class="back-link" href="/#projects">&larr; All projects</a>
+</main>
+
+<!--#include virtual="/partials/footer.html" -->
+
+</body>
+</html>

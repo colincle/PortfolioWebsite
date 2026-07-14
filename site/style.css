@@ -103,6 +103,14 @@ h2.more { margin-top: 2.5rem; }
 
 /* Project cards on the homepage */
 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+.card-grid .card { margin-bottom: 0; }
+
 .card {
   display: block;
   background: var(--bg-alt);
@@ -112,6 +120,15 @@ h2.more { margin-top: 2.5rem; }
   margin-bottom: 1.1rem;
   color: var(--text);
   transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  margin-bottom: 0.9rem;
 }
 .card:hover {
   text-decoration: none;
@@ -206,6 +223,20 @@ h2.more { margin-top: 2.5rem; }
   margin-bottom: 1rem;
 }
 
+.diagram {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--muted);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  white-space: pre;
+}
+
 .skills { margin-top: 1.5rem; }
 .skill-group { margin-bottom: 1.1rem; }
 .skill-group .label {
@@ -269,6 +300,10 @@ footer p {
   justify-content: center;
   align-items: flex-start;
   font-family: var(--mono);
+}
+
+@media (max-width: 600px) {
+  .card-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 540px) {
