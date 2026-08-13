@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>resume · Clement Colin</title>
-  <meta name="description" content="Curriculum vitae of Clement Colin, a C and C++ software engineer based in Tokyo.">
+  <meta name="description" content="Resume of Clement Colin, a C and C++ software engineer based in Tokyo.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css?v=8">
   <style>
@@ -105,6 +105,16 @@
     .resume-skills p { margin-bottom: 0.5rem; }
     .resume-skills strong { color: #14161a; }
     .resume-langs p { margin-bottom: 0.35rem; }
+    .resume-demo { font-size: 0.8rem; margin-top: 0.3rem; }
+
+    /* The printed resume and the public page carry different contact details on
+       purpose. The PDF is sent to employers, so it shows the phone number and
+       spells links out as readable URLs. The public page shows neither: no phone
+       number on a page anyone can load, and short link labels read better on
+       screen. .print-only appears in the PDF alone, .screen-only is the reverse.
+       Keeping both in one file means the PDF regenerates from source with no
+       manual edits before printing. */
+    .print-only { display: none; }
 
     @media (max-width: 660px) {
       .resume-top { grid-template-columns: 1fr; gap: 1.4rem; }
@@ -113,6 +123,8 @@
 
     @media print {
       .site-header, footer, .resume-actions { display: none !important; }
+      .screen-only { display: none !important; }
+      .print-only { display: inline !important; }
       body { background: #ffffff; }
       /* Print columns are narrower than on screen (no sheet padding, only a
          1.2cm page margin), so nudge the title down a hair to keep it one line. */
@@ -145,9 +157,10 @@
       <p class="resume-title">C++ Software Engineer · Desktop Applications · Networking · Systems Programming</p>
       <p class="resume-contact">
         Kawasaki, Japan ·
+        <span class="print-only">+81 70 9173 0937 · </span>
         <a href="mailto:contact@clementcolin.com">contact@clementcolin.com</a><br>
-        <a href="https://github.com/colincle" target="_blank" rel="noopener">GitHub</a> ·
-        <a href="https://www.linkedin.com/in/clementcolindev/" target="_blank" rel="noopener">LinkedIn</a> ·
+        <a href="https://github.com/colincle" target="_blank" rel="noopener"><span class="screen-only">GitHub</span><span class="print-only">github.com/colincle</span></a> ·
+        <a href="https://www.linkedin.com/in/clementcolindev/" target="_blank" rel="noopener"><span class="screen-only">LinkedIn</span><span class="print-only">linkedin.com/in/clementcolindev</span></a> ·
         <a href="https://clementcolin.com" target="_blank" rel="noopener">clementcolin.com</a>
       </p>
       <p class="resume-visa">Spouse visa, no sponsorship required.</p>
@@ -211,6 +224,7 @@
         <div class="resume-block">
           <h3><a href="https://github.com/colincle/SDLRaycaster" target="_blank" rel="noopener">SDL Raycaster</a></h3>
           <p>First-person raycasting engine in C on SDL2, with no game engine and no raycasting library. A multithreaded renderer splits each frame across CPU cores with a z-buffer for correct occlusion, alongside a full movement model and three hand-built levels.</p>
+          <p class="resume-demo"><a href="https://clementcolin.com/projects/sdlraycaster" target="_blank" rel="noopener"><span class="screen-only">Playable in browser</span><span class="print-only">Playable in the browser: clementcolin.com/projects/sdlraycaster</span></a></p>
           <p class="resume-tech"><strong>Tools:</strong> C • SDL2 • POSIX threads • multithreading • Makefile</p>
         </div>
         <div class="resume-block">
